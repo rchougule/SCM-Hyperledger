@@ -61,6 +61,16 @@ transaction Distributor_Seller_Shipment {
     o String contractId
 }
 
+transaction ContractRenewal {
+    o String contractId
+    o DateTime arrivalDateTime
+    o Double unitPrice
+    o Double minTemperatureAllowed
+    o Double maxTemperatureAllowed
+    o Double minPenaltyFactor
+    o Double maxPenaltyFactor
+}
+
 
 asset Shipment identified by shipmentId {
 	  o String shipmentId
