@@ -1,0 +1,109 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace org.fmcgv3
+
+enum ProductType_Producer {
+	o TOMATOES
+  o POTATOES
+}
+
+enum ProductType_ProcUnit {
+    o KETCHUP
+    o FRENCH_FRIES
+}
+
+enum ShipmentStatus {
+    o CREATED
+    o IN_TRANSIT
+    o ARRIVED
+}
+
+abstract transaction ShipmentTransaction {
+	--> Shipment shipment
+}
+
+transaction TemperatureReading extends ShipmentTransaction {
+	  o Double centigrade
+}
+
+transaction ShipmentReceived extends ShipmentTransaction {
+}
+
+transaction Producer_ProcUnit_Shipment{
+    o Long unitCount
+    o ProductType_Producer ProducerType
+    o String contractId	
+}
+
+transaction ProcUnit_Distributor_Shipment {
+  	o String prevShipmentId
+    o Long unitCount
+    o ProductType_ProcUnit ProcUnitType
+    o String contractId
+}
+
+transaction Distributor_Seller_Shipment {
+	  o String prevShipmentId
+    o Long unitCount
+    o ProductType_ProcUnit ProcUnitType
+    o String contractId
+}
+
+
+asset Shipment identified by shipmentId {
+	  o String shipmentId
+    o ProductType_Producer ProducerType optional
+    o ProductType_ProcUnit ProcUnitType optional
+    o ShipmentStatus status
+    o Long unitCount
+    --> Shipment prevShipmentId optional
+    o TemperatureReading[] temperatureReadings optional
+    --> Contract contract optional
+}
+
+asset Contract identified by contractId {
+	  o String contractId
+    --> Producer producer optional
+    --> ProcessingUnit procUnit optional
+    --> Distributor distributor optional
+    --> Seller seller optional
+    o DateTime arrivalDateTime
+    o Double unitPrice
+    o Double minTemperatureAllowed
+    o Double maxTemperatureAllowed
+    o Double minPenaltyFactor
+    o Double maxPenaltyFactor
+}
+
+concept Address {
+	  o String state
+    o String zip
+}
+
+abstract participant Business identified by participantId {
+	  o String participantId
+    o String name
+    o Address address
+    o Double accountBalance
+}
+
+participant Producer extends Business {}
+
+participant ProcessingUnit extends Business {}
+
+participant Distributor extends Business {}
+
+participant Seller extends Business {}
+
