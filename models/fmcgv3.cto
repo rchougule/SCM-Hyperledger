@@ -71,9 +71,9 @@ transaction ContractRenewal {
     o Double maxPenaltyFactor
 }
 
-transaction SettingUp {
-  
-}
+transaction SettingUp {}
+
+transaction DeleteAll {}
 
 
 asset Shipment identified by shipmentId {
