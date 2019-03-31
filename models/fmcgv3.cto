@@ -75,7 +75,6 @@ transaction SettingUp {}
 
 transaction DeleteAll {}
 
-
 asset Shipment identified by shipmentId {
 	  o String shipmentId
     o ProductType_Producer ProducerType optional
