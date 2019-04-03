@@ -1,0 +1,17 @@
+Unhandled error for request POST /api/SettingUp: ValidationError: The `SettingUp` instance is not valid. Details: `transactionId` can't be set (value: "string").
+    at /home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/dao.js:400:12
+    at SettingUp.<anonymous> (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:578:11)
+    at SettingUp.next (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/hooks.js:93:12)
+    at SettingUp.<anonymous> (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:575:23)
+    at SettingUp.trigger (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/hooks.js:83:12)
+    at SettingUp.Validatable.isValid (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/validations.js:541:8)
+    at /home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/dao.js:396:9
+    at doNotify (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at doNotify (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:155:49)
+    at Function.ObserverMixin._notifyBaseObservers (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:178:5)
+    at Function.ObserverMixin.notifyObserversOf (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:153:8)
+    at Function.ObserverMixin._notifyBaseObservers (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:176:15)
+    at Function.ObserverMixin.notifyObserversOf (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:153:8)
+    at Function.ObserverMixin._notifyBaseObservers (/home/rohan/.nvm/versions/node/v8.15.0/lib/node_modules/composer-rest-server/node_modules/loopback-datasource-juggler/lib/observer.js:176:15)
